@@ -5,12 +5,10 @@ import configYelp from '../../../config/config.js';
 Vue.use(Vuex);
 
 import axios from 'axios';
-axios.defaults.baseURL = 'https://api.yelp.com/v3';
-axios.defaults.headers.common['Authorization'] = 'Bearer ' + configYelp.config.yelp.APIKEY
-
+axios.defaults.baseURL = '/api';
 export default new Vuex.Store({
     state: {
-        firstDatafromYelp:''
+        firstDatafromYelp: ''
     },
     getters: {
         places: (state) => {
@@ -24,7 +22,10 @@ export default new Vuex.Store({
     },
     actions: {
         getFirstDataYelp: context => {
-            axios.get('/')
+            axios({
+                    method: 'get',
+                    url: 'http://localhost:3000/businesses',
+                })
                 .then(res => {
                     console.log('action', typeof res)
                     context.commit('bringFirstDataYelp', {

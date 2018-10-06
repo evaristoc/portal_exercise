@@ -1,9 +1,7 @@
 <template>
   <div id="app">
-    <div class='container'>
-      <pp-header></pp-header>
-      <pp-home></pp-home>
-  </div>
+    <pp-header></pp-header>
+    <pp-home></pp-home>
   </div>
 </template>
 
@@ -20,7 +18,7 @@
         },
         components: {
             ppHeader: Header,
-            ppHome: Header,
+            ppHome: Home,
         }
     }
 </script>
