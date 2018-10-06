@@ -5,7 +5,6 @@ import configYelp from '../../../config/config.js';
 Vue.use(Vuex);
 
 import axios from 'axios';
-axios.defaults.baseURL = '/api';
 export default new Vuex.Store({
     state: {
         firstDatafromYelp: ''

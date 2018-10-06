@@ -31,4 +31,8 @@
         width: 100%;
         height: 200px;
     }
+    
+    .btn {
+        border-radius: 8px;
+    }
 </style>
