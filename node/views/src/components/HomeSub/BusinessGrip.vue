@@ -4,7 +4,7 @@
            <div class="card h-100">
             <img class="card-img-top" :src="business.image_url" alt="card image collar">
             <div class="card-body">
-              <div><h4 class="card-title">{{business.name}} <slan class='pull-right'>  <button v-on:click="addProductToCart(product)" class="btn btn-primary">Add To Cart</button></slan></h4></div>
+              <div><h4 class="card-title">{{business.name}} <span class='pull-right'>  <button v-on:click="addProductToCart(product)" class="btn btn-primary">Add To Cart</button></span></h4></div>
               <p class="card-text">Place {{index}}</p>
             </div>
           </div>           
