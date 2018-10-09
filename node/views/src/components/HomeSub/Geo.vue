@@ -1,12 +1,12 @@
 <template>
         <div class='jumbotron'>
-        <googlemaps-map
+        <!--<googlemaps-map
             ref="map"
             class="map"
             :center.sync="mapCenter"
             :zoom.sync="zoom"
             style="height:300px;">
-        </googlemaps-map>
+        </googlemaps-map>-->
         </div>
 </template>
 <script>
@@ -17,6 +17,7 @@
     import configGMap from '../../../../../config/config.js'; //homesub/components/src/views/node
     import axios from 'axios';
 
+    /*
     Vue.use(VueGoogleMaps, {
         load: { //E: this is the loadMap() function
             // put your google API key either in the ./config/local.env.js file or just hardcode in the string below
@@ -25,6 +26,7 @@
             useBetaRenderer: false
         }
     })
+    */
 
     export default {
         data() { //E: in data we can define the mapOptions()
@@ -48,7 +50,7 @@
 </script>
 <style scoped>
     div {
-        width: 100%;
+        width: 900%;
         height: 400px;
         stroke: 100px;
     }

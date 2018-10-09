@@ -1,6 +1,7 @@
 <template>
-    <div class='container'>
+    <div class='container wrapper'>
     <pp-geo></pp-geo>
+    <div class="void"></div>
     <pp-busg :ydata='ydata'></pp-busg>
 
  </div>
@@ -35,3 +36,24 @@
     //--https://stackoverflow.com/a/50120217
     //--https://stackoverflow.com/a/15685819
 </script>
+
+<style scoped>
+    .wrapper {
+        display: flex;
+        height: 100vh;
+    }
+    
+    pp-geo {
+        flex: 0 0 auto;
+    }
+    
+    .void {
+        flex: 1 1 auto;
+        width: 50%;
+    }
+    
+    pp-busg {
+        flex: 2 2 auto;
+        overflow: auto;
+    }
+</style>

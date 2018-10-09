@@ -1,6 +1,7 @@
 <template>
         <div class='row'>
-        <div class='col-md-4 businesscard' v-for="(business, index) in ydata">
+        <!--<div class='col-md-4 businesscard' v-for="(business, index) in ydata">-->
+            <div class='col-sm-12 businesscard' v-for="(business, index) in ydata">
            <div class="card h-100">
             <img class="card-img-top" :src="business.image_url" alt="card image collar">
             <div class="card-body">
