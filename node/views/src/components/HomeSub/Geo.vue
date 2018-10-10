@@ -1,13 +1,14 @@
 <template>
-        <div class='jumbotron'>
+        
+            <div class='jumbotron col-sm-3 col-3'><h1>HELLO MAP!</h1></div>
         <!--<googlemaps-map
             ref="map"
             class="map"
             :center.sync="mapCenter"
             :zoom.sync="zoom"
-            style="height:300px;">
+            style="(height:10px;width:950%; transform:translate(0px,-100px)}">
         </googlemaps-map>-->
-        </div>
+        
 </template>
 <script>
     import Vue from 'vue'
@@ -18,16 +19,15 @@
     import axios from 'axios';
 
     /*
-    Vue.use(VueGoogleMaps, {
-        load: { //E: this is the loadMap() function
-            // put your google API key either in the ./config/local.env.js file or just hardcode in the string below
-            apiKey: configGMap.config.google.browser.MapsAPIKEY || '',
-            libraries: ['places'],
-            useBetaRenderer: false
-        }
-    })
+        Vue.use(VueGoogleMaps, {
+            load: { //E: this is the loadMap() function
+                // put your google API key either in the ./config/local.env.js file or just hardcode in the string below
+                apiKey: configGMap.config.google.browser.MapsAPIKEY || '',
+                libraries: ['places'],
+                useBetaRenderer: false
+            }
+        })
     */
-
     export default {
         data() { //E: in data we can define the mapOptions()
             return {
@@ -52,6 +52,5 @@
     div {
         width: 900%;
         height: 400px;
-        stroke: 100px;
     }
 </style>
