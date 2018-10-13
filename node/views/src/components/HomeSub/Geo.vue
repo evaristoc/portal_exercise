@@ -1,6 +1,15 @@
 <template>
         
-            <div class='jumbotron col-sm-3 col-3'><h1>HELLO MAP!</h1></div>
+            <div class="container">
+            <div class="row">
+            <div class="jumbotron col-sm-3 col-3">
+                <h1>HELLO MAP!</h1>
+            </div>
+            <div class="row eventstable">
+                <pp-cevents></pp-cevents>
+            </div>
+            </div>
+            </div>
         <!--<googlemaps-map
             ref="map"
             class="map"
@@ -14,6 +23,7 @@
     import Vue from 'vue'
     import VueGoogleMaps from 'vue-googlemaps'
     import 'vue-googlemaps/dist/vue-googlemaps.css' //This defines the css!!
+    import CityEvents from './CityEvents.vue';
 
     import configGMap from '../../../../../config/config.js'; //homesub/components/src/views/node
     import axios from 'axios';
@@ -37,6 +47,9 @@
                 },
                 zoom: 13
             }
+        },
+        components: {
+            ppCevents: CityEvents
         }
     }
     /*
@@ -50,7 +63,12 @@
 </script>
 <style scoped>
     div {
-        width: 900%;
+        width: 100%;
         height: 400px;
+    }
+    
+    .eventstable {
+        margin-left: 15px;
+        overflow: scroll;
     }
 </style>

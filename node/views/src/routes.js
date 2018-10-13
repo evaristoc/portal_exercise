@@ -1,7 +1,7 @@
-import Main from './components/Main.vue'
+import MainView from './components/MainView.vue'
 import Home from './components/Home.vue'
 
 export const routes = [
-    { path: "", component: Main },
-    { path: "/home", component: Home }
+    { path: "", component: Home },
+    { path: "/main", component: MainView }
 ]
