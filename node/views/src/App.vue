@@ -1,12 +1,12 @@
 <template>
   <div id="app">   
-<pp-header style="{
+<pp-header style="
         height: 100px;
         width: 100%;
         position: fixed;
         background-color:#2b3e50;
-    }"></pp-header>
-    <div class="container wrapper" style="{display:flex; flex-direction: column;}">
+    "></pp-header>
+    <div class="container wrapper" style="display:flex; flex-direction: column;">
         <pp-main style="z-index:-1; margin-top:130px;"></pp-main>
     </div>
    </div>
