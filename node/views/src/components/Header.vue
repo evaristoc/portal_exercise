@@ -1,5 +1,6 @@
 <template>
 <header>
+<link rel="shortcut icon" href="assets/favicon.ico"/>
 <nav class="navbar navbar-expand-lg navbar-light bg-light"><h1 class="logo"><i class="glyphicon glyphicon-leaf" style='color:green;'></i> <a class="navbar-brand" href="#"><span class='primary'>AMSCOLOGICA</span></a></h1>
   
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

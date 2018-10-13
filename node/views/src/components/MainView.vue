@@ -1,9 +1,9 @@
 <template>
-    <div class="row .wraper"> 
-    <div class="col-lg-7">
+    <div class="row wraper"> 
+    <div class="col-lg-7" style="position: sticky; top: 0; flex: 0 0 auto;">
         <pp-geo></pp-geo>
     </div>
-    <div class="col-lg-5">
+    <div class="col-lg-5" style="">
         <pp-busg :ydata='ydata'></pp-busg>
     </div>
     </div>

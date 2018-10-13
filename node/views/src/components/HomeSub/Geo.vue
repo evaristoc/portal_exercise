@@ -25,7 +25,7 @@
     import 'vue-googlemaps/dist/vue-googlemaps.css' //This defines the css!!
     import CityEvents from './CityEvents.vue';
 
-    import configGMap from '../../../../../config/config.js'; //homesub/components/src/views/node
+    //import configGMap from '../../../../../config/config.js'; //homesub/components/src/views/node
     import axios from 'axios';
 
     /*
