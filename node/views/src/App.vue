@@ -6,17 +6,16 @@
         position: fixed;
         background-color:#2b3e50;
     }"></pp-header>
-    <div class="wrapper" style="{
+    <div class="wrapper" style="
         display: flex;
         flex-direction: column;
-        height: calc(100% - 80px);
-    }">
+    ">
     
-    <router-view style="{
+    <router-view style="
         flex: 1 0 auto;
-        margin-top: 170px;
+        margin-top:107px;
         z-index:-1;
-    }"></router-view>
+    "></router-view>
 
     <!--<pp-home style="{
         flex: 1 0 auto;

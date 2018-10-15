@@ -1,18 +1,15 @@
 <template>
-    <div class='container wrapper' style="{
+    <div class='wrapper' style="
         flex-direction: row;
-    }">
-    <pp-geo class="col-1" style="{
-        flex: 0 0 auto;
-        position: -webkit-sticky;
-        position: sticky;
-        top: 170px;
-    }"></pp-geo>
-    <div class="void col-2" ></div>
-    <pp-busg class="col-3" :ydata='ydata' style="{
-        flex: 1 1 auto;
-        overflow: auto;
-    }"></pp-busg>
+    ">
+    <b-row>
+    <div class="col-md-8" style="padding-left:2%;">
+    <pp-geo style="flex-direction:column; position:sticky;top:107px;"></pp-geo>
+    </div>
+    <div class="col-md-4" style="padding-right:2%;">
+    <pp-busg :ydata='ydata'></pp-busg>
+    </div>
+    </b-row>
  </div>
 </template>
 <style scoped>
@@ -79,41 +76,8 @@
         justify-content: space-between;
         height: 100vh;
     }*/
-    
-    .wrapper {
-        flex-direction: row;
-    }
-    
-    pp-geo {
-        flex: 0 0 auto;
-        position: -webkit-sticky;
-        position: sticky;
-        top: 0;
-    }
-    
-    .void {
-        flex: 1 1 auto;
-        width: 50%;
-    }
-    
-    pp-busg {
-        flex: 2 2 auto;
-        overflow: auto;
-    }
-    
-    @media only screen and (max-width: 768px) {
-        /* For mobile phones: */
-        /*[class*="col-"] {
-            width: 100%;
-        }*/
-        .col-1 {
-            display: none;
-        }
-        .col-2 {
-            display: none;
-        }
-        .col-2 {
-            width: 10%;
-        }
-    }
 </style>
+<b-col cols="1">
+    <div class="void col-2"></div>
+</b-col>
+style=" flex: 2 2 auto; overflow: auto; " flex-direction:column; style=" flex: 0 0 auto; position: -webkit-sticky; position: sticky; top: 130px; "

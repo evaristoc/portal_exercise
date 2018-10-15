@@ -1,6 +1,6 @@
 <template>
         
-            <div class='jumbotron col-sm-3 col-3'><h1>HELLO MAP!</h1></div>
+            <div class='jumbotron'><h1>HELLO MAP!</h1></div>
         <!--<googlemaps-map
             ref="map"
             class="map"
@@ -50,7 +50,7 @@
 </script>
 <style scoped>
     div {
-        width: 900%;
+        /*width: 900%;*/
         height: 400px;
     }
 </style>
