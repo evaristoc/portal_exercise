@@ -88,15 +88,15 @@
 </template>
 
 <script>
-    import Header from './components/Header.vue';
+    import Header from './components/Header.vue'
     import Main from './components/Main.vue'
-    import Home from './components/Home.vue';
-    import Vue from "vue";
+    import Home from './components/Home.vue'
+    import Vue from "vue"
     // imports the ESM module by default
-    import VueFlex from "vue-flex";
+    import VueFlex from "vue-flex"
     // Already autoprefixed for vendor prefixes.
     // Also namespaced to avoid collisions.
-    import "vue-flex/dist/vue-flex.css";
+    import "vue-flex/dist/vue-flex.css"
 
     Vue.use(VueFlex);
 
