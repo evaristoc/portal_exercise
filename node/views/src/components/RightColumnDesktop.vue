@@ -1,20 +1,24 @@
 <template>
         <div class='row'>
         <!--<div class='col-md-4 businesscard' v-for="(business, index) in ydata">-->
-            <div class='col-sm-12 businesscard' v-for="(business, index) in ydata">
-           <div class="card h-100">
-            <img class="card-img-top" :src="business.image_url" alt="card image collar">
-            <div class="card-body">
-              <div><h4 class="card-title">{{business.name}} <span class='pull-right'>  <button v-on:click="addProductToCart(product)" class="btn btn-primary">Add To Cart</button></span></h4></div>
-              <p class="card-text">Place {{index}}</p>
-            </div>
+            <div class='col-sm-12 businesscard' v-for="(business, busindex) in ydata">
+                <pp-buscards :business='business' :busindex='busindex'></pp-buscards>
+
           </div>           
     </div>
     </div>
 </template>
 <script>
+    import BusinessCards from './HomeSub/BusinessCards'
     export default {
-        props: ['ydata']
+        computed: {
+            ydata() {
+                return this.$store.getters.places
+            }
+        },
+        components: {
+            ppBuscards: BusinessCards
+        }
     }
 </script>
 <style scoped>

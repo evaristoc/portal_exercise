@@ -1,17 +1,18 @@
 <template>
-    <div class='wrapper' style="
-        flex-direction: row;
-    ">
+    <div class='wrapper' style="flex-direction: row;" v-if="getWindowWidth()"> {{WindowWidth}}
     <b-row>
     <div class="col-md-8" style="padding-left:2%;">
-    <pp-geo style="flex-direction:column; position:sticky;top:107px;"></pp-geo>
+    <pp-left style="flex-direction:column; position:sticky;top:107px;"></pp-left>
     </div>
     <div class="col-md-4" style="padding-right:2%;">
-    <pp-busg :ydata='ydata'></pp-busg>
+    <pp-right></pp-right>
     </div>
     </b-row>
  </div>
-</template>
+<div v-else>
+     <pp-mobile></pp-mobile>
+</div>
+ </template>
 <style scoped>
     /* resize images */
     
@@ -21,45 +22,51 @@
     }
 </style>
 <script>
-    import GeoComponent from './HomeSub/Geo.vue';
-    import BusinessGridComponent from './HomeSub/BusinessGrip.vue';
+    import LeftComponents from './LeftColumnDesktop.vue';
+    import RightComponents from './RightColumnDesktop.vue';
+    import TabsMenuMobile from './TabsMenuMobile.vue';
+
 
     export default {
-        computed: {
-            ydata() {
-                return this.$store.getters.places
+        data() {
+            return {
+                WindowWidth,
+                //WindowHeight
+
             }
         },
+
         components: {
-            ppGeo: GeoComponent,
-            ppBusg: BusinessGridComponent
+            ppLeft: LeftComponents,
+            ppRight: RightComponents,
+            ppMobile: TabsMenuMobile
         },
         created() {
-            this.$store.dispatch('getFirstDataYelp')
+            this.$store.dispatch('getFirstDataYelp');
+            this.WindowWidth = document.documentElement.clientWidth
+        },
+
+        mounted() {
+            this.$nextTick(function() { //making the method function an async event!!
+                window.addEventListener('resize', this.getWindowWidth);
+                //window.addEventListener('resize', this.getWindowHeight);
+
+                //Init
+                //this.getWindowWidth()
+                //this.getWindowHeight()
+            })
+
         },
 
         methods: {
-            isDesktop() {
-                var w = window,
-                    d = document,
-                    e = d.documentElement,
-                    g = d.getElementsByTagName('div')[0],
-                    x = w.innerWidth || e.clientWidth || g.clientWidth,
-                    y = w.innerHeight || e.clientHeight || g.clientHeight;
-                //alert(x + ' × ' + y);
-                if (x > 768) {
-                    return true
-                } else {
-                    return false
-                }
-                if (/Android|webOS|iPhone||iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                    //    return true
-                    //} else {
-                    //    return false
-                    document.getElementById("pp-geo").style.display = "none";
-                } else {
-                    document.getElementById("pp-geo").style.display = "inline";
-                }
+            getWindowWidth(event) {
+                this.WindowWidth = document.documentElement.clientWidth;
+                //if (this.WindowWidth > 758) {
+                //    console.log(this.WindowWidth);
+                //    return true
+                //} else {
+                //    return false
+                //};
             }
         }
 

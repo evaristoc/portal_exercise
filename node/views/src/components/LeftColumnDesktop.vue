@@ -1,14 +1,10 @@
 <template>
         <b-container>
         <b-row>
-            <div class='jumbotron' style="width:100%;"><h1>HELLO MAP!</h1></div>
-        <!--<googlemaps-map
-            ref="map"
-            class="map"
-            :center.sync="mapCenter"
-            :zoom.sync="zoom"
-            style="(height:10px;width:950%; transform:translate(0px,-100px)}">
-        </googlemaps-map>-->
+            <pp-geo></pp-geo>
+         </b-row>
+        <b-row id="cevents">
+                <pp-cevents></pp-cevents>
         </b-row>
         </b-container>
         
@@ -17,8 +13,10 @@
     import Vue from 'vue'
     import VueGoogleMaps from 'vue-googlemaps'
     import 'vue-googlemaps/dist/vue-googlemaps.css' //This defines the css!!
+    import Geo from './HomeSub/Geo.vue';
+    import CityEvents from './HomeSub/CityEventsTable.vue';
 
-    import configGMap from '../../../../../config/config.js'; //homesub/components/src/views/node
+    import configGMap from '../../../../config/config.js'; //homesub/components/src/views/node
     import axios from 'axios';
 
     /*
@@ -40,6 +38,10 @@
                 },
                 zoom: 13
             }
+        },
+        components: {
+            ppCevents: CityEvents,
+            ppGeo: Geo
         }
     }
     /*
