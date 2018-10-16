@@ -15,7 +15,6 @@
     <router-view style="
         flex: 1 0 auto;
         margin-top:107px;
-        z-index:-1;
     "></router-view>
 
     <!--<pp-home style="{

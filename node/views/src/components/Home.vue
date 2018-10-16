@@ -2,14 +2,14 @@
     <div class='wrapper' style="flex-direction: row;" v-if="getWindowWidth()"> {{WindowWidth}}
     <b-row>
     <div class="col-md-8" style="padding-left:2%;">
-    <pp-left style="flex-direction:column; position:sticky;top:107px;"></pp-left>
+    <pp-left style="flex-direction:column; position:sticky; top:107px;"></pp-left>
     </div>
-    <div class="col-md-4" style="padding-right:2%;">
+    <div class="col-md-4" style="padding-right:2%; z-index:-1;">
     <pp-right></pp-right>
     </div>
     </b-row>
  </div>
-<div v-else>
+<div style="z-index:0;" v-else>
     <pp-mobile></pp-mobile>
 </div>
  </template>
