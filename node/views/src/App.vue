@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+
     <pp-header style="{
         height: 100px;
         width: 100%;
@@ -82,8 +83,8 @@
     <p>2</p>
     </div>-->
 
-    </div>
-  </div>
+</div>
+</div>
 </template>
 
 <script>
@@ -133,5 +134,19 @@
     
     .pp-home {
         flex: 1 0 auto;
+    }
+</style>
+<!--<template>
+    <div class="hover-element">HOVER ME</div>
+</template>
+<style scoped>
+    .hover-element {
+        display: inline-block;
+        padding: 1rem;
+        background: palegreen;
+    }
+    
+    .hover-element:hover {
+        background: red;
     }
 </style>

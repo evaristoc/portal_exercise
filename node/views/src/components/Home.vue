@@ -10,7 +10,7 @@
     </b-row>
  </div>
 <div v-else>
-     <pp-mobile></pp-mobile>
+    <pp-mobile></pp-mobile>
 </div>
  </template>
 <style scoped>
@@ -30,8 +30,8 @@
     export default {
         data() {
             return {
-                WindowWidth,
-                //WindowHeight
+                WindowWidth: 0 //https://jsfiddle.net/hr77p7qb/3/ this definition seems important?
+                    //WindowHeight
 
             }
         },
@@ -52,8 +52,8 @@
                 //window.addEventListener('resize', this.getWindowHeight);
 
                 //Init
-                //this.getWindowWidth()
-                //this.getWindowHeight()
+                this.getWindowWidth()
+                    //this.getWindowHeight()
             })
 
         },
@@ -61,12 +61,12 @@
         methods: {
             getWindowWidth(event) {
                 this.WindowWidth = document.documentElement.clientWidth;
-                //if (this.WindowWidth > 758) {
-                //    console.log(this.WindowWidth);
-                //    return true
-                //} else {
-                //    return false
-                //};
+                if (this.WindowWidth > 768) {
+                    //    console.log(this.WindowWidth);
+                    return true
+                } else {
+                    return false
+                };
             }
         }
 
