@@ -11,19 +11,26 @@ axios.defaults.headers.common['Authorization'] = 'Bearer ' + configYelp.config.y
 export default new Vuex.Store({
     state: {
         firstDatafromYelp: None,
+        pagingrightcol: 1
     },
     getters: {
         places: (state) => {
             return state.firstDatafromYelp;
+        },
+        pagePlaces: (state) => {
+            return state.paginrightcol;
         }
     },
     mutations: {
         bringFirstDataYelp: (state, yelpdata) => {
             state.firstDatafromYelp = yelpdata.alldata;
+        },
+        rightcolPagination: (state, page) => {
+            state.paginrightcol = page;
         }
     },
     actions: {
-        getFirstDataYelp: context => {
+        getFirstDataYelp: (context) => {
             axios.get('/')
                 .then(res => {
                     console.log('action', typeof res)
@@ -32,6 +39,10 @@ export default new Vuex.Store({
                     })
                 })
                 .catch(error => console.log(error))
+        },
+
+        pagingPlaces: (context, page) => {
+            context.commit('rightcolPagination', page)
         }
     }
 })

@@ -1,23 +1,30 @@
 <template>
+    <div>
         <b-row id="businesscardcont">
-        <!--<div class='col-md-4 businesscard' v-for="(business, index) in ydata">-->
+            <!--<div class='col-md-4 businesscard' v-for="(business, index) in ydata">-->
             <div class='col-sm-12 businesscard' v-for="(business, busindex) in ydata">
                 <pp-buscards :business='business' :busindex='busindex'></pp-buscards>
-
-          </div>           
+            </div>           
+        </b-row>
+        <b-row>
+            <pp-pagination></pp-pagination>
+        </b-row>
     </div>
-    </b-row>
 </template>
 <script>
-    import BusinessCards from './HomeSub/BusinessCards'
+    import BusinessCards from './HomeSub/BusinessCards.vue'
+    import Pagination from './HomeSub/RightColPagination.vue'
     export default {
+
         computed: {
             ydata() {
+
                 return this.$store.getters.places
             }
         },
         components: {
-            ppBuscards: BusinessCards
+            ppBuscards: BusinessCards,
+            ppPagination: Pagination
         }
     }
 </script>
