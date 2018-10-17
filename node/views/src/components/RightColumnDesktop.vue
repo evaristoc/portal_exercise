@@ -18,8 +18,8 @@
 
         computed: {
             ydata() {
-
-                return this.$store.getters.places
+                console.log(typeof this.$store.getters.places)
+                return this.$store.getters.places.slice(this.$store.getters.pagePlaces - 1, 3)
             }
         },
         components: {

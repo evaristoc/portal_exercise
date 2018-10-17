@@ -11,14 +11,20 @@ axios.defaults.headers.common['Authorization'] = 'Bearer ' + configYelp.config.y
 export default new Vuex.Store({
     state: {
         firstDatafromYelp: None,
-        pagingrightcol: 1
+        pagingrightcol: 1,
+        lengthData: None
     },
     getters: {
         places: (state) => {
             return state.firstDatafromYelp;
         },
         pagePlaces: (state) => {
-            return state.paginrightcol;
+            return state.pagingrightcol;
+        },
+        lenghtDatacalc: (state) => {
+            if (state.firstDatafromYelp.lenght !== undefined && state.firstDatafromYelp.lenght > 0) {
+                return state.firstDatafromYelp.length
+            }
         }
     },
     mutations: {
