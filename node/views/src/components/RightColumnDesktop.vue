@@ -1,12 +1,12 @@
 <template>
-        <div class='row'>
+        <b-row id="businesscardcont">
         <!--<div class='col-md-4 businesscard' v-for="(business, index) in ydata">-->
             <div class='col-sm-12 businesscard' v-for="(business, busindex) in ydata">
                 <pp-buscards :business='business' :busindex='busindex'></pp-buscards>
 
           </div>           
     </div>
-    </div>
+    </b-row>
 </template>
 <script>
     import BusinessCards from './HomeSub/BusinessCards'
@@ -23,6 +23,10 @@
 </script>
 <style scoped>
     /* resize images */
+    
+    #businesscardcont {
+        margin-top: 107px;
+    }
     
     .businesscard {
         /*margin: 3px 3px 20px 3px;*/

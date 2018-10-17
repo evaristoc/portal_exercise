@@ -1,5 +1,6 @@
 <template>
 <header>
+  <nav class="navbar navbar-default navbar-static-top">
   <b-container fluid>
 <b-navbar toggleable="md" type="dark" variant="info">
 
@@ -42,7 +43,7 @@
 </b-collapse>
 </b-navbar>
 </b-container>
-
+</nav>
 </header>
 </template>
 <script>

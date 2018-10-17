@@ -1,17 +1,17 @@
 <template>
-    <div class='wrapper' style="flex-direction: row;" v-if="getWindowWidth()"> {{WindowWidth}}
-    <b-row>
+    <div class='wrapper' style="flex-direction: row;"> {{WindowWidth}}
+    <b-row  v-if="getWindowWidth()">
     <div class="col-md-8" style="padding-left:2%;">
     <pp-left style="flex-direction:column; position:sticky; top:107px;"></pp-left>
     </div>
-    <div class="col-md-4" style="padding-right:2%; z-index:-1;">
+    <div class="col-md-4" style="padding-right:2%;">
     <pp-right></pp-right>
     </div>
     </b-row>
- </div>
-<div style="z-index:0;" v-else>
+<b-row v-else>
     <pp-mobile></pp-mobile>
-</div>
+</b-row>
+ </div>
  </template>
 <style scoped>
     /* resize images */
