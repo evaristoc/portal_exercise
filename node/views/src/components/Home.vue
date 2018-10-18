@@ -10,7 +10,7 @@
         </b-row>
     </div>
     <b-row class="justify-content-md-center centered" v-else> {{WindowWidth}}
-        <b-col sm="6">
+        <b-col sm="12">
             <pp-mobile></pp-mobile>
         </b-col>
     </b-row>
@@ -82,7 +82,7 @@
 <style scoped>
     .centered {
         margin: auto;
-        width: 50%;
+        width: 80%;
         border: 3px solid green;
         padding: 10px;
     }
