@@ -1,18 +1,20 @@
 <template>
-    <div class='wrapper' style="flex-direction: row;"> {{WindowWidth}}
-    <b-row  v-if="getWindowWidth()">
-    <div class="col-md-8" style="padding-left:2%;">
-    <pp-left style="flex-direction:column; position:sticky; top:107px;"></pp-left>
+    <div class='wrapper' v-if="getWindowWidth()"> {{WindowWidth}}
+        <b-row>
+            <b-col id="ppleftdiv" md="8">
+                <pp-left id="ppleft"></pp-left>
+            </b-col>
+            <b-col id="pprightdiv" md="4">
+                <pp-right></pp-right>
+            </b-col>
+        </b-row>
     </div>
-    <div class="col-md-4" style="padding-right:2%;">
-    <pp-right></pp-right>
-    </div>
+    <b-row class="justify-content-md-center centered" v-else> {{WindowWidth}}
+        <b-col sm="6">
+            <pp-mobile></pp-mobile>
+        </b-col>
     </b-row>
-<b-row v-else>
-    <pp-mobile></pp-mobile>
-</b-row>
- </div>
- </template>
+</template>
 <style scoped>
     /* resize images */
     
@@ -67,6 +69,7 @@
                 } else {
                     return false
                 };
+                justify - content - md - center
             }
         }
 
@@ -77,14 +80,28 @@
 </script>
 
 <style scoped>
-    /*.wrapper {
-        display: flex;
+    .centered {
+        margin: auto;
+        width: 50%;
+        border: 3px solid green;
+        padding: 10px;
+    }
+    
+    .wrapper {
         flex-direction: row;
-        justify-content: space-between;
-        height: 100vh;
-    }*/
+    }
+    
+    #ppleftdiv {
+        padding-left: 2%;
+    }
+    
+    #pprightdiv {
+        padding-right: 2%;
+    }
+    
+    #ppleft {
+        flex-direction: column;
+        position: sticky;
+        top: 107px;
+    }
 </style>
-<b-col cols="1">
-    <div class="void col-2"></div>
-</b-col>
-style=" flex: 2 2 auto; overflow: auto; " flex-direction:column; style=" flex: 0 0 auto; position: -webkit-sticky; position: sticky; top: 130px; "
