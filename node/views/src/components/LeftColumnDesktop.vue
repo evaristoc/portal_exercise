@@ -1,10 +1,12 @@
 <template>
         <b-container>
-        <b-row>
+        <b-row id="geo">
             <pp-geo></pp-geo>
          </b-row>
         <b-row id="cevents">
+            <b-col md="12">
                 <pp-cevents></pp-cevents>
+            </b-col>
         </b-row>
         </b-container>
         
@@ -61,7 +63,7 @@
     
     #cevents {
         margin-top: 15px;
-        margin-left: 15px;
-        overflow: scroll;
+        /*margin-left: 15px;
+        overflow: scroll;*/
     }
 </style>
