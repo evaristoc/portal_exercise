@@ -1,15 +1,27 @@
 <template>
     <div class="card h-100">
-    <img class="card-img-top" :src="business.image_url" alt="card image collar">
-    <div class="card-body">
-        <div><h4 class="card-title">{{business.name}} <span class='pull-right'>  <button v-on:click="addProductToCart(product)" class="btn btn-primary">Add To Cart</button></span></h4></div>
-        <p class="card-text">Place {{busindex}}</p>
-    </div>
+        <img class="card-img-top" :src="business.image_url" alt="card image collar">
+        <div class="card-body">
+            <div>
+                <h4 class="card-title">{{business.name}} <span class='pull-right'>  <button @click="openmodalfunc" class="btn btn-primary">More</button></span></h4>
+            </div>
+            <p class="card-text">Place {{busindex}} {{modal}}</p>
+        </div>
     </div>
 </template>
 <script>
     export default {
-        props: ['business', 'busindex']
+        props: ['business', 'busindex', 'modal'],
+        data() {
+            return {}
+        },
+        methods: {
+            openmodalfunc() {
+                this.modal = true;
+                this.$emit('modalstatefunc', this.modal);
+            }
+        }
+
     }
 </script>
 <style scoped>

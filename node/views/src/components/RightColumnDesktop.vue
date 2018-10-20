@@ -3,18 +3,26 @@
         <b-row id="businesscardcont">
             <!--<div class='col-md-4 businesscard' v-for="(business, index) in ydata">-->
             <div class='col-sm-12 businesscard' v-for="(business, busindex) in ydata">
-                <pp-buscards :business='business' :busindex='busindex'></pp-buscards>
+                <pp-buscards :business="business" :busindex="busindex" :modal="modal" @modalstatefunc='modal = $event'></pp-buscards>
             </div>           
         </b-row>
         <b-row>
             <pp-pagination></pp-pagination>
         </b-row>
+        <pp-modal v-if="modal" :modal="modal" @modalstatefunc="modal = $event"></pp-modal>
     </div>
 </template>
 <script>
     import BusinessCards from './HomeSub/BusinessCards.vue'
     import Pagination from './HomeSub/RightColPagination.vue'
+    import Modal from './HomeSub/PlaceModal.vue'
+
     export default {
+        data() {
+            return {
+                modal: false,
+            }
+        },
 
         computed: {
             ydata() {
@@ -25,7 +33,8 @@
         },
         components: {
             ppBuscards: BusinessCards,
-            ppPagination: Pagination
+            ppPagination: Pagination,
+            ppModal: Modal
         }
     }
 </script>
